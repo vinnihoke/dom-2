@@ -11,6 +11,12 @@ const h2s = document.querySelectorAll("h2");
 
 const toggleDark = document.querySelector("#toggleDark");
 
+const images = document.querySelectorAll("img");
+
+const button = document.querySelectorAll("btn");
+
+
+
 
 
 
@@ -47,7 +53,7 @@ window.addEventListener("resize", blurBackground);
 
 const h2Color = () => {
 	h2s.forEach((item) => {
-		item.style.color = "lightblue";
+		item.style.color = "gold";
 		
 		setTimeout(() => {
 			item.style.color = "";
@@ -55,8 +61,19 @@ const h2Color = () => {
 	})
 
 }
+const imgBlur = () => {
+	images.forEach((item) => {
+		item.style.filter = "blur(2px)";
+		
+		setTimeout(() => {
+			item.style.filter = "";
+		}, 1000);
+	})
+
+}
 
 window.addEventListener("scroll", h2Color);
+window.addEventListener("scroll", imgBlur);
 
 toggleDark.addEventListener("click", () => {
 	  if (bodyContent.style.backgroundColor === "black" ) {
@@ -68,6 +85,8 @@ toggleDark.addEventListener("click", () => {
 	  }
 });
 
+
+//Double Dark Mode!!!
 toggleDark.addEventListener("dblclick", () => {
 		if (bodyContent.style.backgroundColor === "black") {
 		  	bodyContent.style.backgroundColor = "white";
@@ -78,6 +97,16 @@ toggleDark.addEventListener("dblclick", () => {
 		}
 	});
 
+
+//Button Questionnaire
+var destination = "";
+var activities = "";
+var viewPlanner = `${destination}, ${activities}`;
+
+
+button[0].addEventListener('click', () => {
+	var destination = prompt("What is your dream Island to visit?");
+});
 
 
 
