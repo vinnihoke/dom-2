@@ -13,9 +13,9 @@ const toggleDark = document.querySelector("#toggleDark");
 
 const images = document.querySelectorAll("img");
 
-const button = document.querySelectorAll("btn");
+const button = document.querySelectorAll(".btn");
 
-
+const buttonArr = Array.from(button);
 
 
 
@@ -99,14 +99,23 @@ toggleDark.addEventListener("dblclick", () => {
 
 
 //Button Questionnaire
+
 var destination = "";
 var activities = "";
-var viewPlanner = `${destination}, ${activities}`;
+var viewPlanner = "We're going to book you a trip to " + destination + " where you'll do " + activities + ". Enjoy your trip!";
 
 
-button[0].addEventListener('click', () => {
+buttonArr[0].addEventListener('click', () => {
 	var destination = prompt("What is your dream Island to visit?");
 });
+
+buttonArr[1].addEventListener('click', () => {
+	var activities = prompt("What activities would you like to do?");
+});
+
+buttonArr[2].addEventListener('click', () => {
+	alert(viewPlanner);
+})
 
 
 
