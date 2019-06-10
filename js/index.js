@@ -21,6 +21,8 @@ const buttonArr = Array.from(button);
 
 
 
+
+
 // Events
 navContainer.addEventListener("mouseover",(event) => {
 	event.stopPropagation();
@@ -102,19 +104,17 @@ toggleDark.addEventListener("dblclick", () => {
 
 var destination = "";
 var activities = "";
-var viewPlanner = "We're going to book you a trip to " + destination + " where you'll do " + activities + ". Enjoy your trip!";
-
 
 buttonArr[0].addEventListener('click', () => {
-	var destination = prompt("What is your dream Island to visit?");
+	destination = prompt("What is your dream Island to visit?");
 });
 
 buttonArr[1].addEventListener('click', () => {
-	var activities = prompt("What activities would you like to do?");
+	activities = prompt("What activities would you like to do?");
 });
 
 buttonArr[2].addEventListener('click', () => {
-	alert(viewPlanner);
+	alert("We're going to book you a trip to " + destination + " where you'll do " + activities + ". Enjoy your trip!");
 })
 
 
